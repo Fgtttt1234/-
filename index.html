@@ -1,2 +1,116 @@
-# -
-التطبيق من افضل التطبيقات العظيم المفكر العظيم يساعدك كل شيء في التقنيات والبرمجيات والذكاء الاصطناعي وكل شيء في الكون
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مساعد مكاميلا - كازاريلا AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+    .stat {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 25%;
+    }
+    .chat-box {
+      margin: 30px auto;
+      width: 80%;
+      max-width: 500px;
+      background: #1e2a38;
+      padding: 20px;
+      border-radius: 15px;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #00bcd4;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>🤖 مساعد مكاميلا - شركة كازاريلا</header>
+
+  <section class="stats">
+    <div class="stat">
+      <h2>70+</h2>
+      <p>اللغات</p>
+    </div>
+    <div class="stat">
+      <h2>20+</h2>
+      <p>الشركات</p>
+    </div>
+    <div class="stat">
+      <h2>1000+</h2>
+      <p>الابتكارات</p>
+    </div>
+  </section>
+
+  <div class="chat-box">
+    <h3>اسألني أي شيء 🤔</h3>
+    <input type="text" id="userInput" placeholder="اكتب سؤالك هنا...">
+    <button onclick="reply()">أرسل</button>
+    <p id="answer"></p>
+  </div>
+
+  <script>
+    function reply() {
+      let question = document.getElementById("userInput").value;
+      let answerBox = document.getElementById("answer");
+
+      if (question.includes("ذكاء")) {
+        answerBox.innerText = "🤖 الذكاء الاصطناعي هو تخصصنا في كازاريلا!";
+      } else if (question.includes("سيارة")) {
+        answerBox.innerText = "🚗 سيارات كازاريلا ذاتية القيادة الأفضل عالميًا.";
+      } else if (question.includes("مكاميلا")) {
+        answerBox.innerText = "💡 أنا مساعد مكاميلا، أساعدك في كل ما تحتاجه في التقنية والبرمجة!";
+      } else if (question.includes("برمجة")) {
+        answerBox.innerText = "💻 البرمجة هي لغة المستقبل، ونحن نساعدك في تعلمها وإتقانها!";
+      } else if (question.includes("تطوير")) {
+        answerBox.innerText = "🚀 نحن متخصصون في تطوير الحلول التقنية المبتكرة!";
+      } else if (question.includes("تقنية") || question.includes("تكنولوجيا")) {
+        answerBox.innerText = "⚡ التقنية هي شغفنا، ونحن نقدم أحدث الحلول التقنية!";
+      } else if (question.includes("مساعدة")) {
+        answerBox.innerText = "🤝 نحن هنا لمساعدتك في كل ما تحتاجه في عالم التقنية!";
+      } else {
+        answerBox.innerText = "💡 أنا مساعد مكاميلا، أساعدك في كل ما يتعلق بالتقنية والذكاء الاصطناعي والبرمجة. اسألني عن أي شيء!";
+      }
+      
+      // Clear the input field after responding
+      document.getElementById("userInput").value = "";
+    }
+
+    // Allow pressing Enter to send message
+    document.getElementById("userInput").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        reply();
+      }
+    });
+  </script>
+</body>
+</html>
