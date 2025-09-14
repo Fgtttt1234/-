@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kazarerla AI — مكاميلا & المفكّرة العظيمة</title>
+  <meta name="description" content="مكامِيلا والمفكّرة العظيمة من شركة Kazarerla؛ ذكاء اصطناعي سعودي يقوده الملياردير أحمد دغريري، يساعدك في البرمجة، الأمن السيبراني، الواقع الافتراضي، التحليل، الابتكار، الفضاء، الألعاب، الويب، وكل التقنيات الحديثة." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0f1115; --card:#151823; --muted:#8b93a7; --text:#e9ecf1; --brand:#ff7a18; --brand2:#ffb703; --ok:#22c55e; --warn:#f59e0b;
+      --border: #1f2433;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:"Cairo",system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text);
+      background: radial-gradient(1200px 600px at 100% -10%, #1b2030 20%, #0f1115 60%) fixed;
+    }
+    a{color:var(--brand); text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:clamp(16px,2vw,28px)}
+    header{
+      position:sticky; top:0; z-index:10; backdrop-filter:saturate(140%) blur(6px);
+      background:linear-gradient(0deg,rgba(15,17,21,.4),rgba(15,17,21,.6)); border-bottom:1px solid var(--border)
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{
+      width:36px; aspect-ratio:1; border-radius:10px;
+      background: conic-gradient(from 210deg, var(--brand), var(--brand2));
+      box-shadow:0 0 0 3px #ffffff10, 0 10px 30px #ff7a1833;
+    }
+    .cta{display:flex; gap:10px}
+    .btn{
+      padding:.75rem 1rem; border-radius:12px; border:1px solid var(--border); color:var(--text); background:#0f1115;
+      transition:.2s; cursor:pointer; font-weight:600
+    }
+    .btn:hover{transform:translateY(-1px); border-color:#2a3044}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#121318; border:none}
+    .hero{
+      display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center; padding:40px 0 24px
+    }
+    .hero h1{font-size:clamp(26px,4vw,44px); margin:0 0 10px}
+    .hero p{color:var(--muted); margin:.25rem 0 1rem}
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:.35rem .7rem; font-size:.9rem; border:1px solid var(--border);
+      border-radius:999px; color:#d6e3ff; background:#111522}
+    .card{background:linear-gradient(180deg,#141827 0%, #10131c 100%); border:1px solid var(--border); border-radius:16px; padding:18px}
+    .grid{display:grid; gap:14px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} .grid.cols-3{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .grid.cols-3,.grid.cols-2{grid-template-columns:1fr} }
+
+    .kpi{display:flex; gap:12px; align-items:center}
+    .kpi b{font-size:1.15rem}
+    .pill{font-size:.85rem; opacity:.9; padding:.2rem .5rem; border:1px solid var(--border); border-radius:999px}
+
+    .section h2{margin:0 0 .6rem; font-size:clamp(20px,3vw,28px)}
+    .features .item{display:flex; gap:12px; border:1px dashed #283047; border-radius:14px; padding:12px; background:#10131b}
+    .features .item span{font-weight:700}
+    .muted{color:var(--muted)}
+    .tick{color:var(--ok)}
+    .warn{color:var(--warn)}
+
+    /* Chat mini */
+    .chat{display:grid; gap:10px}
+    .chat-box{height:320px; overflow:auto; padding:12px; border-radius:14px; background:#0f131d; border:1px solid var(--border)}
+    .msg{display:flex; gap:10px; margin:6px 0}
+    .msg .bubble{max-width:85%; padding:10px 12px; border-radius:12px; line-height:1.7}
+    .msg.user{justify-content:flex-start}
+    .msg.user .bubble{background:#1a2333}
+    .msg.ai{justify-content:flex-end}
+    .msg.ai .bubble{background:linear-gradient(90deg,#162030,#131a27)}
+    .chat-input{display:flex; gap:8px}
+    input, textarea{
+      width:100%; background:#0c1018; color:var(--text); border:1px solid var(--border); border-radius:12px; padding:.9rem .9rem; outline:none
+    }
+    input:focus, textarea:focus{border-color:#2b3350}
+    footer{margin:36px 0 14px; text-align:center; color:#98a1b6; font-size:.9rem}
+    .footline{opacity:.3}
+    .brand-kz{color:var(--brand2); font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          Kazarerla AI
+          <div class="pill" style="margin-top:2px">مكامِيلا &nbsp;•&nbsp; المفكّرة العظيمة</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#features">المزايا</a>
+        <a class="btn primary" href="#ask">جرّب الذكاء الآن</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">⚡ ذكاء اصطناعي سعودي يقوده <b>أحمد دغريري</b></div>
+        <h1>منصة ذكاء اصطناعي شاملة لكل مجالات التقنية الحديثة</h1>
+        <p>
+          <b>مكاميلا</b> (الروبوت) بعقل <b>المفكّرة العظيمة</b> من شركة <span class="brand-kz">Kazarerla</span>:
+          يساعدك في <b>البرمجة</b>، <b>الأمن السيبراني</b>، <b>الواقع الافتراضي</b>، <b>تحليل البيانات</b>،
+          <b>الفضاء</b>، <b>الويب</b>، <b>الألعاب</b>، <b>القانون والمحاماة</b>، والابتكارات العميقة.
+        </p>
+        <div class="grid cols-3">
+          <div class="card kpi"><span>🧠</span><div><b>عقل المفكّرة</b><div class="muted">محرك استدلال متعدد المجالات</div></div></div>
+          <div class="card kpi"><span>🛡️</span><div><b>أمن سيبراني</b><div class="muted">تحليل مخاطر فوري وإرشادات تقسية</div></div></div>
+          <div class="card kpi"><span>🚀</span><div><b>جاهز للإطلاق</b><div class="muted">نموذج أولي يعمل بدون خادم</div></div></div>
+        </div>
+      </div>
+
+      <!-- Mini Chat -->
+      <div class="card">
+        <div class="section" id="ask">
+          <h2>اسأل مكاميلا الآن</h2>
+          <div class="chat">
+            <div id="chatBox" class="chat-box" aria-live="polite"></div>
+            <div class="chat-input">
+              <input id="q" type="text" placeholder="اكتب سؤالك عن البرمجة، الأمن، الواقع الافتراضي، الفضاء… ثم اضغط أرسل" />
+              <button class="btn primary" id="send">أرسل</button>
+            </div>
+            <div class="muted" style="font-size:.9rem">
+              *هذه إجابات محلية تجريبية بدون اتصال — فقط للعرض. لاحقًا نربطه بنموذجك الحقيقي.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features" style="margin-top:24px">
+      <h2>المجالات التي يغطيها مكاميلا</h2>
+      <div class="grid cols-2 features">
+        <div class="item"><span class="tick">✔</span> البرمجة و<b>الهندسة البرمجية</b> (Python/JS/C++…)، بناء واجهات، وأتمتة الاختبارات.</div>
+        <div class="item"><span class="tick">✔</span> <b>الأمن السيبراني</b>: مراجعة ثغرات، سياسات Zero-Trust، كشف سوء الضبط.</div>
+        <div class="item"><span class="tick">✔</span> <b>تحليل البيانات</b> والذكاء الاصطناعي: نمذجة، تعلم آلي، رؤية حاسوبية.</div>
+        <div class="item"><span class="tick">✔</span> <b>الواقع الافتراضي/المعزّز</b> والتجارب التفاعلية والمحركات ثلاثية الأبعاد.</div>
+        <div class="item"><span class="tick">✔</span> <b>الفضاء والأقمار</b> والنظم المضمنة واتصالات الجيل القادم.</div>
+        <div class="item"><span class="tick">✔</span> <b>الويب</b> والسحابة وDevOps، مع أرشفة ومعايير قابلية العمل.</div>
+        <div class="item"><span class="tick">✔</span> <b>القانون والمحاماة التقنية</b>: توليد مسودات ومذكرات، تنبيه بالمخاطر.</div>
+        <div class="item"><span class="tick">✔</span> <b>الألعاب</b> والتصميم الإجرائي والذكاء لسلوك الشخصيات.</div>
+        <div class="item"><span class="tick">✔</span> <b>الابتكار</b> وإدارة الملكية الفكرية وبحوث متقدمة متعددة التخصصات.</div>
+        <div class="item"><span class="tick">✔</span> أي مجال حديث في التقنية تحتاجه — مكاميلا يتكيّف معك.</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" style="margin-top:24px">
+      <h2>عن Kazarerla • مكاميلا • المفكّرة العظيمة</h2>
+      <div class="card">
+        <p>
+          يقود المنظومة <b>الملياردير السعودي أحمد دغريري</b> بتصميم على بناء منصات سيادية ذكية.
+          <b>مكاميلا</b> هو المساعد الذكي، و<b>المفكّرة العظيمة</b> هو العقل المعرفي الذي ينسّق بين النماذج،
+          المعارف، وقواعد الأمان لإخراج حلول دقيقة وسريعة.
+        </p>
+        <p class="muted">هذا الموقع نسخة أولية. يمكن لاحقًا ربطه بواجهات نماذج حقيقية (API) واستضافة إنتاجية.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section class="section" style="margin-top:24px">
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">ابدأ الآن</h3>
+          <p class="muted">اربط هذا الموقع بنموذج الذكاء الاصطناعي لديك لاحقًا عبر نقطة نهاية واحدة.</p>
+          <ul class="muted" style="margin-top:.3rem; line-height:1.9">
+            <li>صفحة واحدة خفيفة وسريعة</li>
+            <li>تصميم متجاوب للجوال</li>
+            <li>واجهة محادثة تجريبية</li>
+          </ul>
+          <a class="btn primary" href="#ask">جرّب واجهة المحادثة</a>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">هوية المنصة</h3>
+          <p><b>الاسم:</b> مكاميلا — مساعد Kazarerla</p>
+          <p><b>العقل:</b> المفكّرة العظيمة (Orchestrator)</p>
+          <p><b>الرسالة:</b> تمكين الابتكار السريع والآمن عبر كل مجالات التقنية الحديثة.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footline">© <span class="brand-kz">Kazarerla</span>. مكاميلا & المفكّرة العظيمة — منصة تجريبية.</div>
+  </footer>
+
+  <script>
+    // ردود محلية بسيطة حسب الكلمات المفتاحية — للعرض فقط.
+    const rules = [
+      {k:/أمن|سيبر|security/i, a:"للأمن السيبراني: ابدأ بمراجعة الأصول، تطبيق مبدأ الأقل صلاحية، وتفعيل مراقبة السجلات مع تنبيهات شذوذ."},
+      {k:/برمج|كود|code|program/i, a:"للبرمجة: حدّد المتطلبات، اكتب اختبارات، صمّم واجهات واضحة، نفّذ، ثم CI/CD مع مراجعات شيفرة."},
+      {k:/بيانات|تحليل|data|ML|AI/i, a:"للبيانات والذكاء: نظّف البيانات، استكشفها، اختر نموذجاً بسيطاً أولاً، راقب الانحياز، وقيّم قبل الإنتاج."},
+      {k:/واقع|VR|AR|افتراضي/i, a:"للواقع الافتراضي/المعزز: حدد سيناريوهات القيمة، معدّل إطار ثابت، واجهات مريحة، وقياس دقيق لتتبّع الحركة."},
+      {k:/فضاء|قمر|Space/i, a:"للمجال الفضائي: راقب الطاقة والحرارة والكتلة، واستخدم بروتوكولات اتصال مقاومة للأخطاء والزمن الطويل."},
+      {k:/قانون|محام|قضائي|legal/i, a:"للقانون التقني: صنّف المستند، استخرج الكيانات، قارن السوابق، ولد مسودة مع تحذير بعدم اعتبارها استشارة قانونية."},
+      {k:/ألعاب|game/i, a:"للألعاب: ابدأ بنموذج لعب صغير قابِل للتكرار، اضبط التوازن، وراقب مقاييس الاحتفاظ باللاعب."},
+      {k:/ويب|موقع|frontend|backend/i, a:"لويب حديث: اجعل الواجهة خفيفة، API واضحة، مصادقة آمنة، وتخزين مؤقت مع مراقبة أداء."}
+    ];
+
+    const box = document.getElementById('chatBox');
+    const q   = document.getElementById('q');
+    const btn = document.getElementById('send');
+
+    function addMsg(role, text){
+      const row = document.createElement('div');
+      row.className = 'msg ' + (role==='user' ? 'user' : 'ai');
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      box.appendChild(row);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function reply(text){
+      const rule = rules.find(r => r.k.test(text));
+      if(rule){ return rule.a + " — مكاميلا."; }
+      // رد عام
+      return "تم! مكاميلا هنا يساعدك. صف لي هدفك (مجال، منصة، قيود زمن/تكلفة) وسأقترح خطة تنفيذ خطوة بخطوة.";
+    }
+
+    btn.addEventListener('click', () => {
+      const text = q.value.trim();
+      if(!text) return;
+      addMsg('user', text);
+      q.value='';
+      setTimeout(()=> addMsg('ai', reply(text)), 300);
+    });
+
+    q.addEventListener('keydown', e => {
+      if(e.key === 'Enter'){ btn.click(); }
+    });
+
+    // رسالة ترحيب
+    addMsg('ai', 'مرحباً! أنا مكاميلا من Kazarerla بعقل المفكّرة العظيمة. اسألني عن أي مجال تقني حديث، وسأرسم لك الطريق.');
+  </script>
+</body>
+</html>
