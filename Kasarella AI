@@ -1,3 +1,4 @@
+index.htm
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -241,6 +242,76 @@
 
     // رسالة ترحيب
     addMsg('ai', 'مرحباً! أنا مكاميلا من Kazarerla بعقل المفكّرة العظيمة. اسألني عن أي مجال تقني حديث، وسأرسم لك الطريق.');
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kazarela 🤖 - المساعد الذكي</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    #chat {
+      margin: 20px auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #28a745;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>مرحباً بك 👋</h1>
+  <p>أنا مساعد ذكي من شركة Kazarela 🤖 تحت إدارة الملياردير السعودي أحمد دغريري</p>
+
+  <div id="chat">
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="اكتب سؤالك هنا...">
+    <button onclick="sendMessage()">إرسال</button>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const messages = document.getElementById('messages');
+      const userText = input.value;
+      
+      if (userText.trim() === '') return;
+
+      messages.innerHTML += `<p><b>أنت:</b> ${userText}</p>`;
+
+      // ردود بسيطة مبدئية
+      let reply = "أنا من شركة Kazarela 🤖، كيف أساعدك اليوم؟";
+      if (userText.includes("من أسس الشركة")) {
+        reply = "مؤسس الشركة هو أحمد دغريري، رائد الذكاء الاصطناعي.";
+      } else if (userText.includes("مرحبا")) {
+        reply = "أهلاً بك! أنا مساعد Kazarela 🤖.";
+      }
+
+      messages.innerHTML += `<p><b>Kazarela 🤖:</b> ${reply}</p>`;
+      input.value = "";
+    }
   </script>
 </body>
 </html>
