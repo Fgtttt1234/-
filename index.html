@@ -114,3 +114,248 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kazarela 🤖 - المساعد الذكي</title>
+  <style>
+    body { font-family: Arial; background:#111; color:#fff; text-align:center; padding:20px; }
+    #chat { border:1px solid #444; padding:10px; width:90%; max-width:400px; margin:auto; background:#222; }
+    .msg { text-align:right; margin:5px; }
+    input { width:80%; padding:5px; }
+    button { padding:5px; }
+  </style>
+</head>
+<body>
+  <h2>🤖 مرحباً بك! أنا مساعد شركة Kazarela</h2>
+  <div id="chat"></div>
+  <input id="userInput" type="
+<button onclick="sendMessage()">إرسال</button>
+
+<script>
+  function sendMessage() {
+    let input = document.getElementById("userInput");
+    let text = input.value.trim();
+    if (!text) return;
+
+    let chat = document.getElementById("chat");
+    chat.innerHTML += `<div class="msg">👤 أنت: ${text}</div>`;
+
+    let reply = "أنا مساعد ذكي من شركة Kazarela 🤖. اسألني أي سؤال!";
+
+    if (text.includes("مرحبا")) {
+      reply = "أهلاً! أنا مساعد Kazarela 🤖، كيف أقدر أساعدك اليوم؟";
+    } else if (text.includes("من أسس الشركة")) {
+      reply = "مؤسس شركة Kazarela 🤖 هو أحمد دغرير، رائد الذكاء الاصطناعي.";
+    } else if (text.includes("الذكاء الاصطناعي")) {
+      reply = "الذكاء الاصطناعي هو سر قوة Kazarela 🤖 لمستقبل أفضل.";
+    }
+
+    chat.innerHTML += `<div class="msg">🤖 Kazarela: ${reply}</div>`;
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
+  }
+</script>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kazarela - المفكرة العظيمة 🤖</title>
+  <style>
+    body { font-family: Arial; background:#111; color:#fff; text-align:center; padding:20px; }
+    #chat { border:1px solid #444; padding:10px; width:90%; max-width:500px; margin:auto; background:#222; height:400px; overflow-y:scroll; }
+    .msg { text-align:right; margin:5px; }
+    input { width:70%; padding:10px; }
+    button { padding:10px; background:#0f0; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h2>🤖 المفكرة العظيمة – عقل برابيلا من Kazarela</h2>
+  <div id="chat"></div>
+  <input id="userInput" placeholder="اكتب سؤالك هنا...">
+  <button onclick="sendMessage()">إرسال</button>
+
+  <script>
+    async function sendMessage() {
+      let input = document.getElementById("userInput");
+      let text = input.value.trim();
+      if (!text) return;
+
+      let chat = document.getElementById("chat");
+      chat.innerHTML += `<div class="msg">👤 أنت: ${text}</div>`;
+
+      // استدعاء OpenAI API
+      let reply = "جارٍ التفكير بعقل برابيلا...";
+
+      chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: ${reply}</div>`;
+
+      try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer ضع_مفتاحك_هنا"
+          },
+          body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [{ role: "user", content: text }]
+          })
+        });
+
+        const data = await response.json();
+        const aiReply = data.choices[0].message.content;
+
+        chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: ${aiReply}</div>`;
+      } catch (error) {
+        chat.innerHTML += `<div class="msg">⚠️ خطأ: لم أتمكن من الاتصال بعقل برابيلا</div>`;
+      }
+
+      input.value = "";
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المفكرة العظيمة – Kazarela 🤖</title>
+  <style>
+    body { font-family: Arial; background:#111; color:#fff; text-align:center; padding:20px; }
+    #chat { border:1px solid #444; padding:10px; width:90%; max-width:500px; margin:auto; background:#222; height:400px; overflow-y:scroll; }
+    .msg { text-align:right; margin:5px; }
+    input { width:70%; padding:10px; }
+    button { padding:10px; background:#0f0; border:none; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h2>🤖 المفكرة العظيمة – عقل برابيلا | Kazarela</h2>
+  <div id="chat"></div>
+  <input id="userInput" placeholder="اكتب سؤالك هنا...">
+  <button onclick="sendMessage()">إرسال</button>
+
+  <script>
+    async function sendMessage() {
+      let input = document.getElementById("userInput");
+      let text = input.value.trim();
+      if (!text) return;
+
+      let chat = document.getElementById("chat");
+      chat.innerHTML += `<div class="msg">👤 أنت: ${text}</div>`;
+
+      // رسالة انتظار
+      chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: جاري التفكير بعقل برابيلا...</div>`;
+      chat.scrollTop = chat.scrollHeight;
+
+      try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer ضع_مفتاحك_هنا"
+          },
+          body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+              { role: "system", content: "أنت المفكرة العظيمة من شركة Kazarela، عندك عقل برابيلا وتجاوب إجابات منطقية وتتعلم من الأخطاء." },
+              { role: "user", content: text }
+            ]
+          })
+        });
+
+        const data = await response.json();
+        const aiReply = data.choices[0].message.content;
+
+        chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: ${aiReply}</div>`;
+      } catch (error) {
+        chat.innerHTML += `<div class="msg">⚠️ خطأ: لم أتمكن من الاتصال بعقل برابيلا</div>`;
+      }
+
+      input.value = "";
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+"const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer sk-proj-xxxxxxxxxxxxxxxxxxxx"
+  },
+  body: JSON.stringify({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: userText }]
+  })
+});
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>المفكرة العظيمة - Kazarela</title>
+  <style>
+    body { font-family: Arial; background:#111; color:#fff; text-align:center; padding:20px; }
+    #chat { border:1px solid #444; padding:10px; width:90%; max-width:400px; margin:auto; background:#222; }
+    .msg { text-align:right; margin:5px; }
+    input { width:80%; padding:5px; }
+    button { padding:5px; }
+  </style>
+</head>
+<body>
+  <h2>🤖 مرحباً بك! أنا مساعد شركة Kazarela بعقل برابيلا</h2>
+  <div id="chat"></div>
+  <input id="userInput" type="text" placeholder="اكتب سؤالك هنا...">
+  <button onclick="sendMessage()">إرسال</button>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chat = document.getElementById("chat");
+      const userText = input.value;
+
+      chat.innerHTML += `<div class="msg">👤 ${userText}</div>`;
+      input.value = "";
+
+      try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer ضع_مفتاحك_هنا"
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userText }]
+          })
+        });
+
+        const data = await response.json();
+        const aiReply = data.choices[0].message.content;
+
+        chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: ${aiReply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+
+      } catch (error) {
+        chat.innerHTML += `<div class="msg">⚠️ خطأ: لم أتمكن من الاتصال بعقل برابيلا.</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
+function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "ar-SA"; // تقدر تغيرها لـ en-US لو تبغى إنجليزي
+    speechSynthesis.speak(utterance);
+}
+chat.innerHTML += `<div class="msg">🤖 المفكرة العظيمة: ${aiReply}</div>`;
+speak(aiReply);
+let conversations = JSON.parse(localStorage.getItem("chatHistory")) || [];
+
+function saveConversation(user, bot) {
+    conversations.push({user, bot});
+    localStorage.setItem("chatHistory", JSON.stringify(conversations));
+}
+
+saveConversation(userText, aiReply);
